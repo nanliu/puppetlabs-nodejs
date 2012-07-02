@@ -41,6 +41,7 @@ define nodejs::npm (
       unless  => "npm list -p -l | grep '${validate}'",
       cwd     => $npm_dir,
       path    => $::path,
+      logoutput => true,
       require => Class['nodejs'],
     }
 
